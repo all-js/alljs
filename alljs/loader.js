@@ -32,7 +32,6 @@ function load(code) {
                 var addr = pad(parseInt(mt[1]).toString(16), 4);
                 ram.push(addr[0]+addr[1]);
                 ram.push(addr[2]+addr[3]);
-
             }
             //direct number
             else {

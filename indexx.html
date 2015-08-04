@@ -95,10 +95,12 @@
 			<li>
 				<div class="collapsible-header">Link</div>
 				<div class="collapsible-body">
-					<a id="linkbutton" class="waves-effect waves-light btn">Link</a>
-					<div class="card large teal">
-						<pre id = "listlink" class="white-text"></pre>
-  					</div>
+					<div class="contain">
+						<a id="linkbutton" class="waves-effect waves-light btn">Link</a>
+						<div class="card large teal">
+							<pre id = "listlink" class="white-text text-darken-6"></pre>
+	  					</div>
+	  				</div>
 				</div>
 			</li>
 			<li>
@@ -153,7 +155,7 @@
 									</thead>
 								</table>
 								<h4>Stack</h4>
-								<table class="stack" border="1">
+								<table class="stack striped bordered hoverable" border="1">
 								<thead id="stackhead">
 									<tr></tr>
 								</thead>
@@ -176,7 +178,6 @@
 			</li>
 		</ul>
 	</div>
-
 </body>
 
 <script type="text/javascript" src="alljs/preprocess.js">
@@ -194,6 +195,14 @@
 <script type="text/javascript" src="alljs/ctable.js">
 </script>
 <script type="text/javascript" src="alljs/handlers.js">
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#load').click(function() {
+			loadRam(load(linkedCode));
+		});
+	});
 </script>
 
 </html>

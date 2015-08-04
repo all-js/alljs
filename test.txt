@@ -1,0 +1,116 @@
+jmp start
+
+a: db 3
+b: db 4
+
+extern c
+
+start:
+
+lda a
+
+lxi b
+add m
+
+lxi c
+add m
+hlt
+
+global c
+c: db 5
+
+-----------------------------
+
+jmp start
+i: db 0
+sum: db 0
+start:
+lda i
+mvi b,6
+jeq done
+lxi sum
+add m
+sta sum
+lda i
+adi 1
+sta i
+jmp start
+done:
+lda sum
+hlt
+
+--------------------------
+jmp start
+i: db 1
+factorial: db 1
+
+extern multiply
+
+start:
+lda i
+mvi b,5
+
+jeq done
+lxi i
+mov b,m
+lxi factorial
+mov c,m
+
+call multiply
+
+mov a,d
+sta factorial
+lda i
+adi 1
+sta i
+jmp start
+
+done:
+lda factorial
+hlt
+--------------------
+global multiply
+
+i: db 0
+sum: db 0
+
+multiply:
+lxi i
+mvi m,0
+lxi sum
+mvi m,0
+lda i
+
+while: JEQ done
+lda sum
+add c
+sta sum
+lda i
+adi 1
+sta i
+jmp while
+
+done:
+lxi sum
+mov d,m
+ret
+
+
+
+
+jmp start
+extern multiply
+start:
+mvi b,2
+mvi c,3
+call multiply
+mov a,d
+hlt
+
+
+
+
+
+
+
+
