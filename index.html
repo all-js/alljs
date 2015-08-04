@@ -1,352 +1,192 @@
-<!doctype html>
-<html lang="us">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="utf-8">
-	<title>Our Project</title>
-	<link href="jquery-ui.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
-    <script type="text/javascript" src="jquery.min.js"></script>
-    <!--<script type="text/javascript" src="synhigh.js"></script>-->
-    <script type="text/javascript" src="jquery.easyui.min.js"></script>
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
-<style>
-	body{
-		font: 80% "Trebuchet MS", sans-serif; 
-		width: 800px;
-		margin: 70px;
-	}
-	.demoHeaders {
-		margin-top: 2em;
-	}
-	#dialog-link {
-		padding: .4em 1em .4em 20px;
-		text-decoration: none;
-		position: relative;
-	}
-	#dialog-link span.ui-icon {
-		margin: 0 5px 0 0;
-		position: absolute;
-		left: .2em;
-		top: 50%;
-		margin-top: -8px;
-	}
-	#icons {
-		margin: 0;
-		padding: 0;
-	}
-	#icons li {
-		margin: 2px;
-		position: relative;
-		padding: 4px 0;
-		cursor: pointer;
-		float: left;
-		list-style: none;
-	}
-	#icons span.ui-icon {
-		float: left;
-		margin: 0 4px;
-	}
-	.fakewindowcontain .ui-widget-overlay {
-		position: absolute;
-	}
-	.sc {
-		color: black;
-	}
-	.keyword {
-		color: blue;
-		font-weight: bold;
-	}
-	.string {
-		color: green;
-	}
-	.comment {
-		color: green; 
-		background: yellow;
-	}
-	.function {
-		color: red;
-	}
-	#right {
-		float: right;
-		width: 500px;
-	}
-	#highlight {
-		width : 750;
-	}
-	#highlight1 {
-		width :	310px;
-		height: 400px;
-		max-width : 321px;
-		max-height: 401px;
-	}
-	#highlight2 {
-		width : 320px;
-		height: 400px;
-		max-width :321px;
-		max-height: 401px;
-	}
-	#highlight3 {
-		width : 320px;
-		height: 400px;
-		max-width : 321px;
-		max-height: 401px;
-	}
-	#accordion {
-		margin-left: 200px;
-		width: 800px;
-		float: center;
-	}
-	#righttable {
-		float: right;
-		width : 400px;
-		max-height: 400px;
-		max-width: 400px;
-	}
-	#maincode {
-		height: 450px !important;
-	}
-	#codetwo {
-		height: 480px !important;
-	}
-	#codethree {
-		height: 480px !important;
-	}
-	#linkcss {
-		width: 750px !important;
-	}
-	#definedsymbols {
-		float: left;
-	}
-	#notdefinedsymbols {
-		float: right;
-	}
-	#synhigh{
-		position: absolute;
-		font-size: 150%;
-		left: 50px;
-		top : 200px;
-	}
-	#header{
-		padding-left: 200px;
-	}
-	select {
-		width: 200px;
-	}
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
 
-
-
-
-	th,td{
-		padding: 10px;
-	}
-
-	table.memory tbody{
-		height:250px;
-		overflow-y:scroll;
-		display:block;
-	}
-
-	table.stack tbody{
-		height:250px;
-		overflow-y:scroll;
-		display:block;
-	}
-	table.memory #thead{
-		display:block;
-		/*border-bottom: 1px solid #ccc;*/
-	}
-	table.stack #thead{
-		display:block;
-		/*border-bottom: 1px solid #ccc;*/
-	}
-	table.memory td{
-		width: 100px;
-	}
-	table.stack td{
-		width: 200px;
-	}
-	#thead tr,th{
-		border:none;
-		width: 228px!important;
-	}
-	#tbody td{
-		border-left:5px;
-	}
-	#memdiv {
-		float: right;
-
-	}
-	#stackdiv {
-
-	}
-
-</style>
 </head>
 
 <body>
-	<div id="header">
-	<div id="blabla" style="align:center"><h1>Assembler, Linker, Loader</h1></div>
-	<div class="ui-widget"><p>Demonatration of assembler linker loader</p></div>
-	</div>
-		<div id="synhigh"><h3>Assembly code</h3><pre id ="highlightclr"></pre>
 
-</div>
-<!-- Accordion -->
-<div id="accordion">
-
-<h3>Maincode</h3>
-	<div id="maincode">
-		<div>
-		<button id="preprocessone">Preprocess</button>
-		<button id="pass1one">Pass One</button><button id="pass2one">Pass Two</button>
-		</div>
-		<div>
-			
-			<textarea id="highlight1" name="highlight"></textarea>
-			<div id = "righttable">
-				<div id="symboltable1" class="easyui-panel" title="Symbol Table" style="width:400px;height:200px;padding:10px;">
+	<div class="container ">
+	<h4>Assembler, Linker, Loader and simulator</h4>
+		<ul class="collapsible  " data-collapsible="accordion">
+			<li>
+				<div class="collapsible-header section scrollspy" id="maincode">MainCode</div>
+				<div class="collapsible-body">
+					<div class="row">
+						<div class="col s6">
+							<div>
+								<a id="preprocessone" class="waves-effect waves-light btn">Preprosess</a>
+								<a id="pass1one" class="waves-effect waves-light btn disabled">Pass One</a>
+								<a id="pass2one" class="waves-effect waves-light btn disabled">Pass Two</a>
+							</div>
+							<div class="input-field col s12">
+					            <textarea id="highlight1" class="materialize-textarea"></textarea>
+					            <label for="highlight1">Enter your code here</label>
+				            </div>
+						</div>
+						<div class="col s6">
+							<div class="row contain">
+								<div class="col s10 card-panel teal card small" ><span class="card-title">Symbol Table</span><p id="symboltable1"></p></div>
+								<div class="col s5 card-panel teal card small"><span class="card-title">Global Symbols</span><p id="definedsymbolsone"></p></div>
+								<div class="col s5 card-panel teal card small"><span class="card-title">External Symbols</span><p id="notdefinedsymbolsone"></p></div>
+							</div>
+						</div>
+				    </div>
 				</div>
-				<div>
-					<div id="definedsymbolsone" class="easyui-panel" title="Global Symbols" style="width:200px;height:200px;">
-					</div>
-					<div id="notdefinedsymbolsone" class="easyui-panel" title="External Symbols" style="width:200px;height:200px;">
+			</li>
+			<li>
+				<div class="collapsible-header scrollspy" id="codetwo">Code Two</div>
+				<div class="collapsible-body">
+					<div class="row">
+						<div class="col s6">
+							<div>
+								<a id="preprocesstwo" class="waves-effect waves-light btn">Preprosess</a>
+								<a id="pass1two" class="waves-effect waves-light btn disabled">Pass One</a>
+								<a id="pass2two" class="waves-effect waves-light btn disabled">Pass Two</a>
+							</div>
+							<div class="input-field col s12">
+					            <textarea id="highlight2" class="materialize-textarea"></textarea>
+					            <label for="highlight2">Enter your code here</label>
+					        </div>
+						</div>
+						<div class="col s6">
+							<div class="row contain">
+								<div class="col s10 card-panel teal card small"><span class="card-title">Symbol Table</span><p id="symboltable2"></p></div>
+								<div class="col s5 card-panel teal card small"><span class="card-title">Global Symbols</span><p id="definedsymbolstwo"></p></div>
+								<div class="col s5 card-panel teal card small"><span class="card-title">External Symbols</span><p id="notdefinedsymbolstwo"></p></div>
+							</div>
+						</div>
+				    </div>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header scrollspy" id="codethree">Code Three</div>
+				<div class="collapsible-body">
+					<div class="row">
+						<div class="col s6">
+							<div>
+								<a id="preprocessthree" class="waves-effect waves-light btn" >Preprosess</a>
+								<a id="pass1three" class="waves-effect waves-light btn disabled">Pass One</a>
+								<a id="pass2three" class="waves-effect waves-light btn disabled">Pass Two</a>
+							</div>
+							<div class="input-field col s12">
+					            <textarea id="highlight3" class="materialize-textarea"></textarea>
+					            <label for="textarea1">Textarea</label>
+					        </div>
+						</div>
+						<div class="col s6">
+							<div class="row contain">
+								<div class="col s10 card-panel teal card small"><span class="card-title">Symbol Table</span><p id="symboltable3"></p></div>
+								<div class="col s5 card-panel teal card small"><span class="card-title">Global Symbols</span><p id="definedsymbolsthree"></p></div>
+								<div class="col s5 card-panel teal card small"><span class="card-title">External Symbols</span><p id="notdefinedsymbolsthree"></p></div>
+							</div>
+						</div>
+				    </div>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header scrollspy" id="link">Link</div>
+				<div class="collapsible-body">
+					<div class="contain">
+						<a id="linkbutton" class="waves-effect waves-light btn">Link</a>
+						<div class="card large teal">
+							<pre id = "listlink" class="white-text text-darken-6"></pre>
+	  					</div>
+	  				</div>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header scrollspy" id="simulate">Simulate</div>
+				<div class="collapsible-body">
+					<div class="container ">
+						<div class="row">
+							<div >
+								<a id="load" class="waves-effect waves-light btn">Load</a>
+								<a id="next" onclick="execute();" class="waves-effect waves-light btn disabled">Next</a>
+								<a id="runfull" onclick="runall();" class="waves-effect waves-light btn disabled">Run Full</a>
+							</div>
+							<div class="col s6">
+								<h4>Registars</h4>
+								<table class="striped bordered hoverable">								<thead>
+										<tr>
+											<td>A</td>
+											<td id="val-a">Eclair</td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>B</td>
+											<td id="val-b"></td>
+											<td>C</td>
+											<td id="val-c"></td>				
+										</tr>
+										<tr>
+											<td>D</td>
+											<td id="val-d"></td>
+											<td>E</td>
+											<td id="val-e"></td>				
+										</tr>
+										<tr>
+											<td>H</td>
+											<td id="val-h"></td>
+											<td>L</td>
+											<td id="val-l"></td>				
+										</tr>
+										<tr>
+											<td>PC</td>
+											<td id="val-pc"></td>
+											<td></td>
+											<td></td>				
+										</tr>
+										<tr>
+											<td>SP</td>
+											<td id="val-sp"></td>
+											<td></td>
+											<td></td>				
+										</tr>
+									</thead>
+								</table>
+								<h4>Stack</h4>
+								<table class="stack striped bordered hoverable" border="1">
+								<thead id="stackhead">
+									<tr></tr>
+								</thead>
+								<tbody id="stackbody">	
+								</tbody>
+								</table>		
+							</div>	
+							<div class="col s6">
+								<h4>Memory Addresses</h4>
+								<table class="bordered hoverable memory">
+									<thead id="thead">
+									</thead>
+									<tbody id="tbody">	
+									</tbody>
+								</table>
+							</div>
+						</div>		
 					</div>
 				</div>
-			</div>
-		</div>
+			</li>
+		</ul>
+<!-- 		<div class="col hide-on-small-only m3 l2">
+    	<ul class="section table-of-contents">
+	        <li><a href="#maincode">Main Code</a></li>
+	        <li><a href="#codetwo">Code Two</a></li>
+	        <li><a href="#codethree">Code Three</a></li>
+	        <li><a href="#link">Link</a></li>
+	        <li><a href="#simulate">Simulate</a></li>
+      </ul>
+    </div> -->
 	</div>
-
-
-<h3 id="twoclr">Code Two</h3>
-	<div id="codetwo">
-		<div><button id="preprocesstwo">Preprocess</button><button id="pass1two">Pass One</button><button id="pass2two">Pass Two</button>
-		</div>
-		<div>
-			<textarea id="highlight2" name="highlight"></textarea>
-			<div id = "righttable">
-				<div id="symboltable2" class="easyui-panel" title="Symbol Table" style="width:400px;height:200px;padding:10px;">
-				</div>
-				<div>
-					<div id="definedsymbolstwo" class="easyui-panel" title="Global Symbols" style="width:200px;height:200px;">
-					</div>
-					<div id="notdefinedsymbolstwo" class="easyui-panel" title="External Symbols" style="width:200px;height:200px;">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-<h3 id="threeclr">Code Three</h3>
-	<div id="codethree">
-		<div><button id="preprocessthree">Preprocess</button>
-		<button id="pass1three">Pass One</button>
-		<button id="pass2three">Pass Two</button>
-		</div>
-		<div>
-			<textarea id="highlight3" name="highlight"></textarea>
-			<div id = "righttable">
-				<div id="symboltable3" class="easyui-panel" title="Symbol Table" style="width:400px;height:200px;padding:10px;">
-				</div>
-				<div>
-					<div id="definedsymbolsthree" class="easyui-panel" title="Global Symbols" style="width:200px;height:200px;">
-					</div>
-					<div id="notdefinedsymbolsthree" class="easyui-panel" title="Exernal Symbols" style="width:200px;height:200px;">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-<h3>Link</h3>
-	<div id="link">
-		<button id="linkbutton">Link</button>
-		<div id = "linkcss">
-			<pre id = "colrtxt"></pre>
-			<div id ="highlight" class="easyui-panel" title="Linked code" style="width:750px;padding:10px;">
-			<pre id = "listlink"></pre>
-			</div>
-		</div>	
-	</div>
-<h3>Simulate</h3>
-	<div id="simulate">
-	<button id="load">Load</button>
-	<button onclick="execute();">Next</button>
-	<button onclick="runall();">Run Full</button>
-
-	<div>
-		<table class="easyui-datagrid" title="Registers" style="width:363px;height:180px"
-			data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
-		<thead>
-			<tr>
-				<th data-options="field:'itemid',width:40">A</th>
-				<th data-options="field:'productid',width:140"><i id="val-a"></i></th>
-			</tr>
-			<tr>
-				<th data-options="field:'itemid',width:40">B</th>
-				<th data-options="field:'productid',width:140"><i id="val-b"></i></th>
-				<th data-options="field:'itemid',width:40">C</th>
-				<th data-options="field:'productid',width:140"><i id="val-c"></i></th>
-			</tr>
-			<tr>
-				<th data-options="field:'itemid',width:40">D</th>
-				<th data-options="field:'productid',width:140"><i id="val-d"></i></th>
-				<th data-options="field:'itemid',width:40">E</th>
-				<th data-options="field:'productid',width:140"><i id="val-e"></i></th>
-			</tr>
-			<tr>
-				<th data-options="field:'itemid',width:40">H</th>
-				<th data-options="field:'productid',width:140"><i id="val-h"></i></th>
-				<th data-options="field:'itemid',width:40">L</th>
-				<th data-options="field:'productid',width:140"><i id="val-l"></i></th>
-			</tr>
-			<tr>
-				<th data-options="field:'itemid',width:100">PC</th>
-				<th data-options="field:'productid',width:140"><i id="val-pc"></i></th>
-			</tr>
-			<tr>
-				<th data-options="field:'itemid',width:40">SP</th>
-				<th data-options="field:'productid',width:140"><i id="val-sp"></i></th>
-			</tr>
-		</thead>		
-		</table>
-	</div>
-	<div >
-		<div id="memdiv">
-			<table class="memory" border="1">
-			<thead id="thead">
-				<tr><th>Memory Addresses</th></tr>
-			</thead>
-			<tbody id="tbody">	
-			</tbody>
-			</table>
-		</div>
-
-		<div id = "stackdiv">
-			<table class="stack" border="1">
-			<thead id="stackhead">
-				<tr><th>Stack</th></tr>
-			</thead>
-			<tbody id="stackbody">	
-			</tbody>
-			</table>
-		</div>
-	</div>
-</div>
-
-
-
-
-
-
-
-
-</div>
 </body>
-</html>
-
 
 <script type="text/javascript" src="alljs/preprocess.js">
 </script>
@@ -362,44 +202,18 @@
 </script>
 <script type="text/javascript" src="alljs/ctable.js">
 </script>
+<script type="text/javascript" src="alljs/handlers.js">
+</script>
 
-<script src="external/jquery/jquery.js"></script>
-<script src="jquery.min.js"></script>
-<script src="jquery.js"></script>
-<script src="jquery-ui.js"></script>
-<script src="prefixfree.min.js"></script>
-<script src="handlers.js"></script>
-
-
-<script>
-
-	$( "#accordion" ).accordion({
-		speed: 1,
-	});
-	// Hover states on the static widgets
-	$( "#dialog-link, #icons li" ).hover(
-		function() {
-			$( this ).addClass( "ui-state-hover" );
-		},
-		function() {
-			$( this ).removeClass( "ui-state-hover" );
-		}
-	);
-	
+<script type="text/javascript">
 	$(document).ready(function() {
-		//add float left hack
-		
-		$('#definedsymbolsone').parent().css('float','left');
-		$('#definedsymbolstwo').parent().css('float','left');
-		$('#definedsymbolsthree').parent().css('float','left');
-		$('#notdefinedsymbolsone').parent().css('float','right');
-		$('#notdefinedsymbolstwo').parent().css('float','right');
-		$('#notdefinedsymbolsthree').parent().css('float','right');
-
 		$('#load').click(function() {
 			loadRam(load(linkedCode));
-
+    		$('#next').removeClass('disabled');
+    		$('#runfull').removeClass('disabled');
 		});
 	});
-	
+
 </script>
+
+</html>
