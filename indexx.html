@@ -48,9 +48,9 @@
 					<div class="row">
 						<div class="col s6">
 							<div>
-								<a id="preprocesstwo" class="waves-effect waves-light btn">Stuff</a>
-								<a id="pass1two" class="waves-effect waves-light btn">Stuff</a>
-								<a id="pass2two" class="waves-effect waves-light btn">Stuff</a>
+								<a id="preprocesstwo" class="waves-effect waves-light btn">Preprosess</a>
+								<a id="pass1two" class="waves-effect waves-light btn">Pass One</a>
+								<a id="pass2two" class="waves-effect waves-light btn">Pass Two</a>
 							</div>
 							<div class="input-field col s12">
 					            <textarea id="highlight2" class="materialize-textarea"></textarea>
@@ -97,13 +97,82 @@
 				<div class="collapsible-body">
 					<a id="linkbutton" class="waves-effect waves-light btn">Link</a>
 					<div class="card large teal">
-						<pre id = "listlink"></pre>
+						<pre id = "listlink" class="white-text"></pre>
   					</div>
 				</div>
 			</li>
 			<li>
-				<div class="collapsible-header">Simulate</div>
-				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				<div class="collapsible-header ">Simulate</div>
+				<div class="collapsible-body">
+					<div class="container ">
+						<div class="row">
+							<div >
+								<a id="load" class="waves-effect waves-light btn">Load</a>
+								<a onclick="execute();" class="waves-effect waves-light btn">Next</a>
+								<a onclick="runall();" class="waves-effect waves-light btn">Run Full</a>
+							</div>
+							<div class="col s6">
+								<h4>Registars</h4>
+								<table class="striped bordered hoverable">								<thead>
+										<tr>
+											<td>A</td>
+											<td id="val-a">Eclair</td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>B</td>
+											<td id="val-b"></td>
+											<td>C</td>
+											<td id="val-c"></td>				
+										</tr>
+										<tr>
+											<td>D</td>
+											<td id="val-d"></td>
+											<td>E</td>
+											<td id="val-e"></td>				
+										</tr>
+										<tr>
+											<td>H</td>
+											<td id="val-h"></td>
+											<td>L</td>
+											<td id="val-l"></td>				
+										</tr>
+										<tr>
+											<td>PC</td>
+											<td id="val-pc"></td>
+											<td></td>
+											<td></td>				
+										</tr>
+										<tr>
+											<td>SP</td>
+											<td id="val-sp"></td>
+											<td></td>
+											<td></td>				
+										</tr>
+									</thead>
+								</table>
+								<h4>Stack</h4>
+								<table class="stack" border="1">
+								<thead id="stackhead">
+									<tr></tr>
+								</thead>
+								<tbody id="stackbody">	
+								</tbody>
+								</table>		
+							</div>	
+							<div class="col s6">
+								<h4>Memory Addresses</h4>
+								<table class="bordered hoverable memory">
+									<thead id="thead">
+									</thead>
+									<tbody id="tbody">	
+									</tbody>
+								</table>
+							</div>
+						</div>		
+					</div>
+				</div>
 			</li>
 		</ul>
 	</div>
