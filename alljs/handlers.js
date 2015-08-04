@@ -17,10 +17,12 @@ $("#preprocessone").click(function() {
   //preprocess
     var code = $('#highlight1').val();
     $('#highlight1').val(preprocess(code));
+    $('#pass1one').removeClass('disabled');
 });
 
 $("#pass1one").click(function() {
     //passone
+    $('#pass2one').removeClass('disabled');
     var code = $('#highlight1').val();
     var obj = passOne(code);
     objOne = obj;
@@ -51,11 +53,14 @@ $("#pass2one").click(function() {
 
 // For code two
 $("#preprocesstwo").click(function() {
+
     var code = $('#highlight2').val();
     $('#highlight2').val(preprocess(code));
+    $('#pass1two').removeClass('disabled');
 });
 
 $("#pass1two").click(function() {
+    $('#pass2two').removeClass('disabled');
     var code = $('#highlight2').val();
     var obj = passOne(code);
     objTwo = obj;
@@ -86,9 +91,12 @@ $("#pass2two").click(function() {
 $("#preprocessthree").click(function() {
     var code = $('#highlight3').val();
     $('#highlight3').val(preprocess(code));
+    $('#pass1three').removeClass('disabled');
+
 });
 
 $("#pass1three").click(function() {
+    $('#pass2three').removeClass('disabled');
     var code = $('#highlight3').val();
     var obj = passOne(code);
     objThree = obj;
@@ -226,9 +234,10 @@ $("#highlight3").keypress(function (){
     };
     if (num == 0) {
         $("#listlink").html(c); //injecting the code into the listrank id 
-        $("#highlightclr").text("");   
+       // $("#highlightclr").text("");   
+         // alert("working");
     };
-    //alert("fuckjhkj")
+    //alert("fuckjhkj");
     
     //as you can see keywords are still purple inside comments.
     //we will create a filter function to remove those spans. This function will noe be used in .replace() instead of a replacement string
