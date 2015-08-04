@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="alljs/synhigh.js"></script>
+
+
+</head>
+
+<body>
+<!--Import jQuery before materialize.js-->
+	<div class="container ">
+		<ul class="collapsible  " data-collapsible="accordion">
+			<li>
+				<div class="collapsible-header active">MainCode</div>
+				<div class="collapsible-body">
+					<div class="row">
+						<div class="col s6">
+							<div>
+								<a id="preprocessone" class="waves-effect waves-light btn">Preprosess</a>
+								<a id="pass1one" class="waves-effect waves-light btn">Pass One</a>
+								<a id="pass2one" class="waves-effect waves-light btn">Pass Two</a>
+							</div>
+							<div class="input-field col s12">
+					            <textarea id="highlight1" class="materialize-textarea"></textarea>
+					            <label for="highlight1">Enter your code here</label>
+				            </div>
+						</div>
+						<div class="col s6">
+							<div class="row contain">
+								<div class="col s10 card-panel teal card small" ><span class="card-title">Symbol Table</span><p id="symboltable1"></p></div>
+								<div class="col s5 card-panel teal card small"><span class="card-title">Global Symbols</span><p id="definedsymbolsone"></p></div>
+								<div class="col s5 card-panel teal card small"><span class="card-title">External Symbols</span><p id="notdefinedsymbolsone"></p></div>
+							</div>
+						</div>
+				    </div>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header">Code Two</div>
+				<div class="collapsible-body">
+					<div class="row">
+						<div class="col s6">
+							<div>
+								<a id="preprocesstwo" class="waves-effect waves-light btn">Stuff</a>
+								<a id="pass1two" class="waves-effect waves-light btn">Stuff</a>
+								<a id="pass2two" class="waves-effect waves-light btn">Stuff</a>
+							</div>
+							<div class="input-field col s12">
+					            <textarea id="highlight2" class="materialize-textarea"></textarea>
+					            <label for="highlight2">Enter your code here</label>
+					        </div>
+						</div>
+						<div class="col s6">
+							<div class="row contain">
+								<div class="col s10 card-panel teal card small"><span class="card-title">Symbol Table</span><p id="symboltable2"></p></div>
+								<div class="col s5 card-panel teal card small"><span class="card-title">Global Symbols</span><p id="definedsymbolstwo"></p></div>
+								<div class="col s5 card-panel teal card small"><span class="card-title">External Symbols</span><p id="notdefinedsymbolstwo"></p></div>
+							</div>
+						</div>
+				    </div>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header">Code Three</div>
+				<div class="collapsible-body">
+					<div class="row">
+						<div class="col s6">
+							<div>
+								<a id="preprocessthree" class="waves-effect waves-light btn" >Preprosess</a>
+								<a id="pass1three" class="waves-effect waves-light btn">Pass One</a>
+								<a id="passthree" class="waves-effect waves-light btn">Pass Two</a>
+							</div>
+							<div class="input-field col s12">
+					            <textarea id="highlight3" class="materialize-textarea"></textarea>
+					            <label for="textarea1">Textarea</label>
+					        </div>
+						</div>
+						<div class="col s6">
+							<div class="row contain">
+								<div class="col s10 card-panel teal card small"><span class="card-title">Symbol Table</span><p id="symboltable3"></p></div>
+								<div class="col s5 card-panel teal card small"><span class="card-title">Global Symbols</span><p id="definedsymbolsthree"></p></div>
+								<div class="col s5 card-panel teal card small"><span class="card-title">External Symbols</span><p id="notdefinedsymbolsthree"></p></div>
+							</div>
+						</div>
+				    </div>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header">Link</div>
+				<div class="collapsible-body">
+					<a id="linkbutton" class="waves-effect waves-light btn">Link</a>
+					<div class="card large teal">
+						<pre id = "listlink"></pre>
+  					</div>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header">Simulate</div>
+				<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+			</li>
+		</ul>
+	</div>
+
+</body>
+
+<script type="text/javascript" src="alljs/preprocess.js">
+</script>
+<script type="text/javascript" src="alljs/instructions.js">
+</script>
+<script type="text/javascript" src="alljs/re.js">
+</script>
+<script type="text/javascript" src="alljs/assemble.js">
+</script>
+<script type="text/javascript" src="alljs/linker.js">
+</script>
+<script type="text/javascript" src="alljs/loader.js">
+</script>
+<script type="text/javascript" src="alljs/ctable.js">
+</script>
+<script type="text/javascript" src="alljs/handlers.js">
+</script>
+
+</html>

@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>Our Project</title>
+	<link href="jquery-ui.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <!--<script type="text/javascript" src="synhigh.js"></script>-->
+    <script type="text/javascript" src="jquery.easyui.min.js"></script>
+
+<style>
+	body{
+		font: 80% "Trebuchet MS", sans-serif; 
+		width: 800px;
+		margin: 70px;
+	}
+	.demoHeaders {
+		margin-top: 2em;
+	}
+	#dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+	#icons {
+		margin: 0;
+		padding: 0;
+	}
+	#icons li {
+		margin: 2px;
+		position: relative;
+		padding: 4px 0;
+		cursor: pointer;
+		float: left;
+		list-style: none;
+	}
+	#icons span.ui-icon {
+		float: left;
+		margin: 0 4px;
+	}
+	.fakewindowcontain .ui-widget-overlay {
+		position: absolute;
+	}
+	.sc {
+		color: black;
+	}
+	.keyword {
+		color: blue;
+		font-weight: bold;
+	}
+	.string {
+		color: green;
+	}
+	.comment {
+		color: green; 
+		background: yellow;
+	}
+	.function {
+		color: red;
+	}
+	#right {
+		float: right;
+		width: 500px;
+	}
+	#highlight {
+		width : 750;
+	}
+	#highlight1 {
+		width :	310px;
+		height: 400px;
+		max-width : 321px;
+		max-height: 401px;
+	}
+	#highlight2 {
+		width : 320px;
+		height: 400px;
+		max-width :321px;
+		max-height: 401px;
+	}
+	#highlight3 {
+		width : 320px;
+		height: 400px;
+		max-width : 321px;
+		max-height: 401px;
+	}
+	#accordion {
+		margin-left: 200px;
+		width: 800px;
+		float: center;
+	}
+	#righttable {
+		float: right;
+		width : 400px;
+		max-height: 400px;
+		max-width: 400px;
+	}
+	#maincode {
+		height: 450px !important;
+	}
+	#codetwo {
+		height: 480px !important;
+	}
+	#codethree {
+		height: 480px !important;
+	}
+	#linkcss {
+		width: 750px !important;
+	}
+	#definedsymbols {
+		float: left;
+	}
+	#notdefinedsymbols {
+		float: right;
+	}
+	#synhigh{
+		position: absolute;
+		font-size: 150%;
+		left: 50px;
+		top : 200px;
+	}
+	#header{
+		padding-left: 200px;
+	}
+	select {
+		width: 200px;
+	}
+
+
+
+
+	th,td{
+		padding: 10px;
+	}
+
+	table.memory tbody{
+		height:250px;
+		overflow-y:scroll;
+		display:block;
+	}
+
+	table.stack tbody{
+		height:250px;
+		overflow-y:scroll;
+		display:block;
+	}
+	table.memory #thead{
+		display:block;
+		/*border-bottom: 1px solid #ccc;*/
+	}
+	table.stack #thead{
+		display:block;
+		/*border-bottom: 1px solid #ccc;*/
+	}
+	table.memory td{
+		width: 100px;
+	}
+	table.stack td{
+		width: 200px;
+	}
+	#thead tr,th{
+		border:none;
+		width: 228px!important;
+	}
+	#tbody td{
+		border-left:5px;
+	}
+	#memdiv {
+		float: right;
+
+	}
+	#stackdiv {
+
+	}
+
+</style>
+</head>
+
+<body>
+	<div id="header">
+	<div id="blabla" style="align:center"><h1>Assembler, Linker, Loader</h1></div>
+	<div class="ui-widget"><p>Demonatration of assembler linker loader</p></div>
+	</div>
+		<div id="synhigh"><h3>Assembly code</h3><pre id ="highlightclr"></pre>
+
+</div>
+<!-- Accordion -->
+<div id="accordion">
+
+<h3>Maincode</h3>
+	<div id="maincode">
+		<div>
+		<button id="preprocessone">Preprocess</button>
+		<button id="pass1one">Pass One</button><button id="pass2one">Pass Two</button>
+		</div>
+		<div>
+			
+			<textarea id="highlight1" name="highlight"></textarea>
+			<div id = "righttable">
+				<div id="symboltable1" class="easyui-panel" title="Symbol Table" style="width:400px;height:200px;padding:10px;">
+				</div>
+				<div>
+					<div id="definedsymbolsone" class="easyui-panel" title="Global Symbols" style="width:200px;height:200px;">
+					</div>
+					<div id="notdefinedsymbolsone" class="easyui-panel" title="External Symbols" style="width:200px;height:200px;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<h3 id="twoclr">Code Two</h3>
+	<div id="codetwo">
+		<div><button id="preprocesstwo">Preprocess</button><button id="pass1two">Pass One</button><button id="pass2two">Pass Two</button>
+		</div>
+		<div>
+			<textarea id="highlight2" name="highlight"></textarea>
+			<div id = "righttable">
+				<div id="symboltable2" class="easyui-panel" title="Symbol Table" style="width:400px;height:200px;padding:10px;">
+				</div>
+				<div>
+					<div id="definedsymbolstwo" class="easyui-panel" title="Global Symbols" style="width:200px;height:200px;">
+					</div>
+					<div id="notdefinedsymbolstwo" class="easyui-panel" title="External Symbols" style="width:200px;height:200px;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<h3 id="threeclr">Code Three</h3>
+	<div id="codethree">
+		<div><button id="preprocessthree">Preprocess</button>
+		<button id="pass1three">Pass One</button>
+		<button id="pass2three">Pass Two</button>
+		</div>
+		<div>
+			<textarea id="highlight3" name="highlight"></textarea>
+			<div id = "righttable">
+				<div id="symboltable3" class="easyui-panel" title="Symbol Table" style="width:400px;height:200px;padding:10px;">
+				</div>
+				<div>
+					<div id="definedsymbolsthree" class="easyui-panel" title="Global Symbols" style="width:200px;height:200px;">
+					</div>
+					<div id="notdefinedsymbolsthree" class="easyui-panel" title="Exernal Symbols" style="width:200px;height:200px;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<h3>Link</h3>
+	<div id="link">
+		<button id="linkbutton">Link</button>
+		<div id = "linkcss">
+			<pre id = "colrtxt"></pre>
+			<div id ="highlight" class="easyui-panel" title="Linked code" style="width:750px;padding:10px;">
+			<pre id = "listlink"></pre>
+			</div>
+		</div>	
+	</div>
+<h3>Simulate</h3>
+	<div id="simulate">
+	<button id="load">Load</button>
+	<button onclick="execute();">Next</button>
+	<button onclick="runall();">Run Full</button>
+
+	<div>
+		<table class="easyui-datagrid" title="Registers" style="width:363px;height:180px"
+			data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+		<thead>
+			<tr>
+				<th data-options="field:'itemid',width:40">A</th>
+				<th data-options="field:'productid',width:140"><i id="val-a"></i></th>
+			</tr>
+			<tr>
+				<th data-options="field:'itemid',width:40">B</th>
+				<th data-options="field:'productid',width:140"><i id="val-b"></i></th>
+				<th data-options="field:'itemid',width:40">C</th>
+				<th data-options="field:'productid',width:140"><i id="val-c"></i></th>
+			</tr>
+			<tr>
+				<th data-options="field:'itemid',width:40">D</th>
+				<th data-options="field:'productid',width:140"><i id="val-d"></i></th>
+				<th data-options="field:'itemid',width:40">E</th>
+				<th data-options="field:'productid',width:140"><i id="val-e"></i></th>
+			</tr>
+			<tr>
+				<th data-options="field:'itemid',width:40">H</th>
+				<th data-options="field:'productid',width:140"><i id="val-h"></i></th>
+				<th data-options="field:'itemid',width:40">L</th>
+				<th data-options="field:'productid',width:140"><i id="val-l"></i></th>
+			</tr>
+			<tr>
+				<th data-options="field:'itemid',width:100">PC</th>
+				<th data-options="field:'productid',width:140"><i id="val-pc"></i></th>
+			</tr>
+			<tr>
+				<th data-options="field:'itemid',width:40">SP</th>
+				<th data-options="field:'productid',width:140"><i id="val-sp"></i></th>
+			</tr>
+		</thead>		
+		</table>
+	</div>
+	<div >
+		<div id="memdiv">
+			<table class="memory" border="1">
+			<thead id="thead">
+				<tr><th>Memory Addresses</th></tr>
+			</thead>
+			<tbody id="tbody">	
+			</tbody>
+			</table>
+		</div>
+
+		<div id = "stackdiv">
+			<table class="stack" border="1">
+			<thead id="stackhead">
+				<tr><th>Stack</th></tr>
+			</thead>
+			<tbody id="stackbody">	
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>
+
+
+<script type="text/javascript" src="alljs/preprocess.js">
+</script>
+<script type="text/javascript" src="alljs/instructions.js">
+</script>
+<script type="text/javascript" src="alljs/re.js">
+</script>
+<script type="text/javascript" src="alljs/assemble.js">
+</script>
+<script type="text/javascript" src="alljs/linker.js">
+</script>
+<script type="text/javascript" src="alljs/loader.js">
+</script>
+<script type="text/javascript" src="alljs/ctable.js">
+</script>
+
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery.min.js"></script>
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="prefixfree.min.js"></script>
+<script src="handlers.js"></script>
+
+
+<script>
+
+	$( "#accordion" ).accordion({
+		speed: 1,
+	});
+	// Hover states on the static widgets
+	$( "#dialog-link, #icons li" ).hover(
+		function() {
+			$( this ).addClass( "ui-state-hover" );
+		},
+		function() {
+			$( this ).removeClass( "ui-state-hover" );
+		}
+	);
+	
+	$(document).ready(function() {
+		//add float left hack
+		
+		$('#definedsymbolsone').parent().css('float','left');
+		$('#definedsymbolstwo').parent().css('float','left');
+		$('#definedsymbolsthree').parent().css('float','left');
+		$('#notdefinedsymbolsone').parent().css('float','right');
+		$('#notdefinedsymbolstwo').parent().css('float','right');
+		$('#notdefinedsymbolsthree').parent().css('float','right');
+
+		$('#load').click(function() {
+			loadRam(load(linkedCode));
+
+		});
+	});
+	
+</script>
